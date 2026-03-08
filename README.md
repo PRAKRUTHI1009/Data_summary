@@ -6,7 +6,9 @@ pip install pycountry
 
 **2.Run the Data Extraction Script****
 def fetch_worldbank_data(indicator_code, column_name):
-url = f"https://api.worldbank.org/v2/country/all/indicator/{indicator_code}?format=json&per_page=2000"
+url = f"https://api.worldbank.org/v2/country/all/indicator/{indicator_code}?format=json&per_page=20000"
+[API's limit is not change because filtered the latest year records and it contains within 20000]
+ 
  # Fetch indicators
 df_life = fetch_worldbank_data("SP.DYN.LE00.IN", "life_expectancy")
 df_gdp = fetch_worldbank_data("NY.GDP.PCAP.CD", "gdp_per_capita")
